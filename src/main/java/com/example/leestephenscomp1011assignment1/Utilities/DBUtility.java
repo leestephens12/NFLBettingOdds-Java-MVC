@@ -1,5 +1,6 @@
 package com.example.leestephenscomp1011assignment1.Utilities;
 
+import com.example.leestephenscomp1011assignment1.Models.MvpPlayer;
 import javafx.scene.chart.XYChart;
 
 
@@ -260,5 +261,34 @@ public class DBUtility {
         return tjWatt;
     }
 
+    /**
+     *
+     * returns an array list that holds information for our mvp table view
+     */
+    public static ArrayList<MvpPlayer> getMVPOddsTable() {
+        ArrayList<MvpPlayer> mvpPlayerTable = new ArrayList<>();
 
+        String sql = "SELECT mvpplayerId, mvpplayer, mvpodds, mvpdate FROM mvp;";
+
+        try (
+                Connection conn = DriverManager.getConnection(connectURL, user, pw);
+                Statement statement = conn.createStatement();
+                ResultSet resultSet = statement.executeQuery(sql);
+        ) {
+
+            while (resultSet.next()) {
+                int mvpPlayerId = resultSet.getInt("mvpplayerId");
+                String mvpPlayer = resultSet.getString("mvpplayer");
+                int mvpOdds = resultSet.getInt("mvpodds");
+                String mvpDate = resultSet.getString("mvpdate");
+
+                MvpPlayer newMvpPlayer = new MvpPlayer(mvpPlayerId, mvpPlayer, mvpOdds, mvpDate);
+
+                mvpPlayerTable.add(newMvpPlayer);
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mvpPlayerTable;
+    }
 }
