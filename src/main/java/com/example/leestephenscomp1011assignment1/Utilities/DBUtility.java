@@ -265,8 +265,8 @@ public class DBUtility {
      *
      * returns an array list that holds information for our mvp table view
      */
-    public static ArrayList<MvpPlayer> getMVPOddsTable() {
-        ArrayList<MvpPlayer> mvpPlayerTable = new ArrayList<>();
+    public static ArrayList<MvpPlayer> getMvpPlayerData() {
+        ArrayList<MvpPlayer> mvpPlayerData = new ArrayList<>();
 
         String sql = "SELECT mvpplayerId, mvpplayer, mvpodds, mvpdate FROM mvp;";
 
@@ -277,18 +277,19 @@ public class DBUtility {
         ) {
 
             while (resultSet.next()) {
-                int mvpPlayerId = resultSet.getInt("mvpplayerId");
+                Integer playerId = resultSet.getInt("mvpplayerId");
                 String mvpPlayer = resultSet.getString("mvpplayer");
-                int mvpOdds = resultSet.getInt("mvpodds");
+                Integer mvpOdds = resultSet.getInt("mvpodds");
                 String mvpDate = resultSet.getString("mvpdate");
+                MvpPlayer newMvpPlayer = new MvpPlayer(playerId, mvpPlayer, mvpOdds, mvpDate);
 
-                MvpPlayer newMvpPlayer = new MvpPlayer(mvpPlayerId, mvpPlayer, mvpOdds, mvpDate);
+                mvpPlayerData.add(newMvpPlayer);
 
-                mvpPlayerTable.add(newMvpPlayer);
             }
         }catch (Exception e) {
             e.printStackTrace();
         }
-        return mvpPlayerTable;
+        return mvpPlayerData;
     }
+
 }

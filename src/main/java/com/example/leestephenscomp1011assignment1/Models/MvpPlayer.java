@@ -8,10 +8,10 @@ public class MvpPlayer {
     private String date;
 
     public MvpPlayer(int playerId, String playerName, int odds, String date) {
-        this.playerId = playerId;
-        this.playerName = playerName;
-        this.odds = odds;
-        this.date = date;
+        setPlayerId(playerId);
+        setPlayerName(playerName);
+        setOdds(odds);
+        setDate(date);
     }
 
     public int getPlayerId() {
@@ -19,12 +19,7 @@ public class MvpPlayer {
     }
 
     public void setPlayerId(int playerId) {
-        if(playerId == 0) {
             this.playerId = playerId;
-        }
-        else {
-            throw new IllegalArgumentException("Player Id must be greater than 0");
-        }
     }
 
     public String getPlayerName() {
@@ -45,12 +40,7 @@ public class MvpPlayer {
     }
 
     public void setOdds(int odds) {
-        if(odds > 10000 || odds < -1000) {
-            this.odds = odds;
-        }
-        else {
-            throw new IllegalArgumentException("Betting odds must be between +10000 - (-1000)");
-        }
+        this.odds = odds;
 
     }
 
@@ -59,12 +49,7 @@ public class MvpPlayer {
     }
 
     public void setDate(String date) {
-        if(date.length() < 10) {
             this.date = date;
-        }
-        else {
-            throw new IllegalArgumentException("Date must be smaller than 10 letters and be in the form of yyyy-mm-dd");
-        }
     }
 
     public String toString() {

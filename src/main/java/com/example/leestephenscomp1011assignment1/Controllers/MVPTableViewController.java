@@ -17,9 +17,6 @@ public class MVPTableViewController implements Initializable {
     private TableView<MvpPlayer> mvpTableView;
 
     @FXML
-    private TableColumn<MvpPlayer, Integer> playerIdColumn;
-
-    @FXML
     private TableColumn<MvpPlayer, String> mvpPlayerColumn;
 
     @FXML
@@ -30,12 +27,11 @@ public class MVPTableViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        playerIdColumn.setCellValueFactory(new PropertyValueFactory<>("mvpplayerId"));
-        mvpPlayerColumn.setCellValueFactory(new PropertyValueFactory<>("mvpplayer"));
-        mvpOddsColumn.setCellValueFactory(new PropertyValueFactory<>("mvpodds"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("mvpdate"));
+        mvpPlayerColumn.setCellValueFactory(new PropertyValueFactory<>("playerName"));
+        mvpOddsColumn.setCellValueFactory(new PropertyValueFactory<>("odds"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
 
-        mvpTableView.getItems().addAll(DBUtility.getMVPOddsTable());
+        mvpTableView.getItems().addAll(DBUtility.getMvpPlayerData());
     }
 }
 
