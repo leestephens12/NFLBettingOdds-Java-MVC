@@ -33,7 +33,7 @@
          <bottom>
             <HBox prefHeight="25.0" prefWidth="556.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" text="DPOY">
+                  <Button mnemonicParsing="false" onAction="#changeToDPOYLineChart" text="DPOY Odds">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>

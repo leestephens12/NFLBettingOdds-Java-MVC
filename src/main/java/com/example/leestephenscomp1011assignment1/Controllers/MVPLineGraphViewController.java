@@ -1,10 +1,13 @@
 package com.example.leestephenscomp1011assignment1.Controllers;
 
 import com.example.leestephenscomp1011assignment1.Utilities.DBUtility;
+import com.example.leestephenscomp1011assignment1.Utilities.SceneChanger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -20,5 +23,10 @@ public class MVPLineGraphViewController implements Initializable {
         mvpLineChart.getData().add(DBUtility.getJustinHerbert());
         mvpLineChart.getData().add(DBUtility.getJoshAllen());
         mvpLineChart.getData().add(DBUtility.getKylerMurray());
+    }
+
+    @FXML
+    private void changeToDPOYLineChart(ActionEvent event) throws IOException {
+        SceneChanger.changeScenes(event, "dpoy-line-graph-view.fxml", "DPOY Odds Line Chart");
     }
 }
