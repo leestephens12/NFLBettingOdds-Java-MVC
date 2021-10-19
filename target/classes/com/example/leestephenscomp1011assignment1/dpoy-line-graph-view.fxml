@@ -25,7 +25,7 @@
                   </CategoryAxis>
               </xAxis>
               <yAxis>
-                <NumberAxis animated="false" label="Betting Odds" side="LEFT">
+                <NumberAxis label="Betting Odds" side="LEFT">
                      <tickLabelFont>
                         <Font size="11.0" />
                      </tickLabelFont>
