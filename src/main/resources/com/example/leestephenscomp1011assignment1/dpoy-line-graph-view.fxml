@@ -50,7 +50,7 @@
             <HBox BorderPane.alignment="CENTER">
                <children>
                   <Button mnemonicParsing="false" onAction="#changeToMVPLineChart" text="MVP Odds" />
-                  <Button mnemonicParsing="false" text="DPOY Chart">
+                  <Button mnemonicParsing="false" onAction="#changeToDPOYTableView" text="DPOY Chart">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>

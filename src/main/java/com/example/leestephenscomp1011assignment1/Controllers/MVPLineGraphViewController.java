@@ -29,4 +29,9 @@ public class MVPLineGraphViewController implements Initializable {
     private void changeToDPOYLineChart(ActionEvent event) throws IOException {
         SceneChanger.changeScenes(event, "dpoy-line-graph-view.fxml", "DPOY Odds Line Chart");
     }
+
+    @FXML
+    public void goToMvpChart(ActionEvent event) throws IOException {
+        SceneChanger.changeScenes(event,"mvp-table-view.fxml", "MVP Odds Table View");
+    }
 }

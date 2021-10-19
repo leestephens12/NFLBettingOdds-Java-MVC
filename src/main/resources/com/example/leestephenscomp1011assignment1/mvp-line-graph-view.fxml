@@ -38,7 +38,7 @@
                         <Insets />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="MVP Chart">
+                  <Button mnemonicParsing="false" onAction="#goToMvpChart" text="MVP Chart">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>

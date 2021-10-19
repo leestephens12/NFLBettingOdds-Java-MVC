@@ -1,5 +1,6 @@
 package com.example.leestephenscomp1011assignment1.Utilities;
 
+import com.example.leestephenscomp1011assignment1.Models.DpoyPlayer;
 import com.example.leestephenscomp1011assignment1.Models.MvpPlayer;
 import javafx.scene.chart.XYChart;
 
@@ -290,6 +291,33 @@ public class DBUtility {
             e.printStackTrace();
         }
         return mvpPlayerData;
+    }
+
+    public static ArrayList<DpoyPlayer> getDpoyPlayerData() {
+        ArrayList<DpoyPlayer> dpoyPlayerData = new ArrayList<>();
+
+        String sql = "SELECT dpoyplayerId, dpoyplayer, dpoyodds, dpoydate FROM dpoy;";
+
+        try (
+                Connection conn = DriverManager.getConnection(connectURL, user, pw);
+                Statement statement = conn.createStatement();
+                ResultSet resultSet = statement.executeQuery(sql);
+        ) {
+
+            while (resultSet.next()) {
+                Integer playerId = resultSet.getInt("dpoyplayerId");
+                String mvpPlayer = resultSet.getString("dpoyplayer");
+                Integer mvpOdds = resultSet.getInt("dpoyodds");
+                String mvpDate = resultSet.getString("dpoydate");
+                DpoyPlayer newDpoyPlayer = new DpoyPlayer(playerId, mvpPlayer, mvpOdds, mvpDate);
+
+                dpoyPlayerData.add(newDpoyPlayer);
+
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dpoyPlayerData;
     }
 
 }
