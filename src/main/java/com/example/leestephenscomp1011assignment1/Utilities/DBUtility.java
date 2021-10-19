@@ -16,7 +16,7 @@ public class DBUtility {
 
     /**
      *
-     * All Mvp Classes to return XY Charts
+     * Returns All Mvp Classes to return XY Charts to populate line charts
      */
     public static XYChart.Series<String, Integer> getPatrickMahomes() {
         XYChart.Series<String, Integer> patrickMahomes = new XYChart.Series<>();
@@ -45,7 +45,7 @@ public class DBUtility {
     public static XYChart.Series<String, Integer> getTomBrady() {
         XYChart.Series<String, Integer> tomBrady = new XYChart.Series<>();
 
-        //SQL command to get info to populate bar chart
+        //SQL command to get info to populate line chart
         String sql = "SELECT mvpdate, mvpodds FROM mvp WHERE mvpplayer = 'Tom Brady';";
 
         //Establishing database connection
@@ -140,7 +140,7 @@ public class DBUtility {
 
     /**
      *
-     * All DPOY Classes that return XYCharts
+     * All DPOY Classes that return XYCharts to populate line charts
      */
     public static XYChart.Series<String, Integer> getMylesGarret() {
         XYChart.Series<String, Integer> mylesGarrett = new XYChart.Series<>();

@@ -1,0 +1,19 @@
+/*
+    Received color schemes from https://www.canva.com
+ */
+
+.root {
+    -fx-font-family: Cambria;
+    -fx-background-color: #050A30;
+}
+
+.headLabel {
+    -fx-text-fill: white;
+}
+
+
+.button {
+    -fx-background-color: #DF362D;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+}

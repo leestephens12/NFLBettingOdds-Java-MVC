@@ -30,6 +30,7 @@ public class MVPTableViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //Setting the values for each column
         mvpPlayerColumn.setCellValueFactory(new PropertyValueFactory<>("playerName"));
         mvpOddsColumn.setCellValueFactory(new PropertyValueFactory<>("odds"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));

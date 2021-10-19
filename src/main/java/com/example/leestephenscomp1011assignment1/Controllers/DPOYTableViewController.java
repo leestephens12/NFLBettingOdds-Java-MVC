@@ -31,6 +31,7 @@ public class DPOYTableViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //setting the values to the individual columns
         dpoyPlayerColumn.setCellValueFactory(new PropertyValueFactory<>("playerName"));
         dpoyOddsColumn.setCellValueFactory(new PropertyValueFactory<>("odds"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));

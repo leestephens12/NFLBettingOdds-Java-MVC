@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.leestephenscomp1011assignment1.Controllers.DPOYTableViewController">
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.leestephenscomp1011assignment1.Controllers.DPOYTableViewController">
    <children>
       <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -31,13 +31,13 @@
             </TableView>
          </center>
          <bottom>
-            <Button mnemonicParsing="false" onAction="#backToDpoyGraph" text="Back To DPOY Graph" BorderPane.alignment="CENTER">
+            <Button mnemonicParsing="false" onAction="#backToDpoyGraph" styleClass="headLabel" text="Back To DPOY Graph" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="20.0" top="10.0" />
                </BorderPane.margin></Button>
          </bottom>
          <top>
-            <Label text="DPOY Odds Regular Season 2021" BorderPane.alignment="CENTER">
+            <Label styleClass="headLabel" text="DPOY Odds Regular Season 2021" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

@@ -18,6 +18,7 @@ public class MVPLineGraphViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //setting each individual player stats to the line chart
         mvpLineChart.getData().add(DBUtility.getPatrickMahomes());
         mvpLineChart.getData().add(DBUtility.getTomBrady());
         mvpLineChart.getData().add(DBUtility.getJustinHerbert());

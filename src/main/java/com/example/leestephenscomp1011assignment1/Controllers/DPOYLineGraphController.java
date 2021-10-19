@@ -18,6 +18,7 @@ public class DPOYLineGraphController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //Adding each individual player stats to the line chart
         dpoyLineChart.getData().add(DBUtility.getMylesGarret());
         dpoyLineChart.getData().add(DBUtility.getAaronDonald());
         dpoyLineChart.getData().add(DBUtility.getTrevonDiggs());
@@ -27,11 +28,13 @@ public class DPOYLineGraphController implements Initializable {
 
     @FXML
     private void changeToMVPLineChart(ActionEvent event) throws IOException {
+        //change scenes to the mvp line chart
         SceneChanger.changeScenes(event, "mvp-line-graph-view.fxml", "MVP Odds Line Chart");
     }
 
     @FXML
     private void changeToDPOYTableView(ActionEvent event) throws IOException {
+        //change scenes to dpoy table view
         SceneChanger.changeScenes(event, "dpoy-table-view.fxml", "DPOY Odds Chart");
     }
 }

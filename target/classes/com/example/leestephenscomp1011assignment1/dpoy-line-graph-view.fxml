@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.leestephenscomp1011assignment1.Controllers.DPOYLineGraphController">
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.leestephenscomp1011assignment1.Controllers.DPOYLineGraphController">
    <children>
       <BorderPane prefHeight="800.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -25,7 +25,7 @@
                   </CategoryAxis>
               </xAxis>
               <yAxis>
-                <NumberAxis label="Betting Odds" side="LEFT">
+                <NumberAxis animated="false" label="Betting Odds" side="LEFT">
                      <tickLabelFont>
                         <Font size="11.0" />
                      </tickLabelFont>
@@ -34,7 +34,7 @@
             </LineChart>
          </center>
          <top>
-            <Label text="NFL DPOY Odds 2021 Regular Season" BorderPane.alignment="CENTER">
+            <Label styleClass="headLabel" text="NFL DPOY Odds 2021 Regular Season" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
