@@ -19,7 +19,12 @@ public class MvpPlayer {
     }
 
     public void setPlayerId(int playerId) {
+        if(playerId > 0) {
             this.playerId = playerId;
+        }
+        else {
+            throw new IllegalArgumentException("Player Id must be greater than 0");
+        }
     }
 
     public String getPlayerName() {
@@ -40,8 +45,12 @@ public class MvpPlayer {
     }
 
     public void setOdds(int odds) {
-        this.odds = odds;
-
+        if(odds < 100000 && odds > -10000) {
+            this.odds = odds;
+        }
+        else {
+            throw new IllegalArgumentException("Odds must be between 100000 -> -10000");
+        }
     }
 
     public String getDate() {
@@ -49,7 +58,12 @@ public class MvpPlayer {
     }
 
     public void setDate(String date) {
+        if(date.length() < 11) {
             this.date = date;
+        }
+        else {
+            throw new IllegalArgumentException("Date must be smaller than 11 characters and must be formatted yyyy-mm-dd");
+        }
     }
 
     public String toString() {
